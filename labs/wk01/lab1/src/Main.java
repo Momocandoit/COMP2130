@@ -10,44 +10,84 @@ public class Main {
 
         // IPO ---> Input ---> process ---> output
         // Input and Outputs are in form of string
-        /*
+
+        boolean e = true;
+
+        // -------------------- string系　--------------------
+        String name = "Momoka";
+        // 新しいString objectを作る書き方 & できること
+        String n = new String("Momoka");
+        System.out.println(n);                // Momoka
+        System.out.println(n.length());       // 6
+        System.out.println(n.toUpperCase());  // MOMOKA
+        // How to compare
+        // 1) To compare the contents of strings
+        System.out.println(name.equals(n));
+        // 2) To check whether the references point to the same object (同じオブジェクトを指しているか)
+        System.out.println(name == n);
+
+
+        // -------------------- numeric系 --------------------
+        // a++ and ++b の違い
+        // a++は値を使って方増やす。++bは使う前に増やす。
         int a = 5;
         int b = 7;
         double c = 5.6;
-        boolean e = true;
-        String name = "hesam akbari";
-        String n = new String("Hesam Akbari");
-        System.out.println("the result is " + a++ + ++b);
-        System.out.println(a);
+        System.out.println("the result is " + a++ + ++b);  // 58
+        // System.out.println("The result is " + (a++ + ++b)); とすればconcatenationではなく足し算になる
+        System.out.println(a);                             // 6
 
-        System.out.printf("the numbers are %d,  %d, %.2f\n", a, b, c);
-        //====================================================================//
-        // I want to collect someone full name!
+        // printf: You specify where values should appear and how they should be formatted(表示形式を指定する)
+        // %dはa, %dはb, %.2fはcと対応している。
+        // %d: Displays an integer | %.2f: Displays two decimal places | \nはnew line.
+        System.out.printf("The numbers are %d, %d, %.2f\n", a, b, c); // The numbers are 6, 8, 5.60 って表示される
+
+        // Converting string into an integer
+        System.out.println("Enter the first integer :");     // まずuser inputを促す
+        Scanner inputInteger = new Scanner(System.in);       // Creates a Scanner object that reads console input and makes it accessible through the variable inputInteger
+        // "10"として読み取られる　→ integerの10に変換　→　n1にstored
+        int n1 = Integer.parseInt(inputInteger.nextLine());
+
+        // こう書いても良い
+        // String enteredText = inputInteger.nextLine();
+        // int n1 = Integer.parseInt(enteredText);
+
+        // Each variable has a dedicated class for all the methods you may need
+        System.out.println("Enter the second and third number: ");
+        int n2 = inputInteger.nextInt();
+        int n3 = inputInteger.nextInt();
+        System.out.println(n1 + n2 + n3);
+
+
+
+        // -------------------- reading系 --------------------
+        // Creating a Scanner object for reading input
         System.out.println("Enter your first name and last name:");
         Scanner sc = new Scanner(System.in);
-        //String fname = sc.next();
-        //String lname = sc.next();
-        String fullName = sc.nextLine();
+        // String firstName = sc.next();    reads one token separated by whitespace(空白で区切られた入力を一つ読み取る)
+        // String lastName = sc.next();
+        String fullName = sc.nextLine(); // reads a line of input as a string(1行分の入力を文字列として読み取る)
+        // System.out.println("Your full name is " + firstName + " " + lastName);
+        System.out.println("Welcome " + fullName);
 
-       // System.out.println("your full name is " + fname + " " + lname);
-        System.out.println(fullName);
-        System.out.println("Enter the first integer :");
-        // Each variable has a dedicated class for all the methods you may need
-        int n1 = Integer.parseInt(sc.nextLine());
-        System.out.println("enter the second and third: ");
-        int n2 = sc.nextInt();
-        int n3 = sc.nextInt();
-        System.out.println(n1+n2+n3);
 
         // ================================
         // collect three integers find the sum and avg of those 3 and
         // show the biggest value contain in any of those numbers
-*/
-        Scanner sc = new Scanner(System.in);
+
+
+        // Creating 1 Scanner for reading input, then use it 3 times to store 3 integers in separate variables
+        // Step 1: Create a Scanner / 入力を読む道具を用意する
+        Scanner userInput3Integers = new Scanner(System.in);
+
+        // Step 2: Prompt user to input
         System.out.println("Enter 3 integers: ");
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int num3 = sc.nextInt();
+
+        // Step 3: 一つずつintegerを読み取って、variableに入れる
+        int num1 = userInput3Integers.nextInt();
+        int num2 = userInput3Integers.nextInt();
+        int num3 = userInput3Integers.nextInt();
+
         int sum = num1 + num2 + num3;
         double avg = sum / 3.0;
         System.out.printf("the sum is %d and the avg is %.2f \n", sum, avg);
@@ -60,7 +100,5 @@ public class Main {
         else{
             {System.out.println("the biggest number is " + num3);}
         }
-
-
     }
 }
