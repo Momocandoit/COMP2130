@@ -27,6 +27,7 @@ public class Drink {
     // -------------- 2 constructors ------------
     // constructor: 作る時の初期設定。classと同じ名前でreturnがないのが特徴。飲み物の名前、価格、IDを設定する。
     // 1) 名前を価格も指定されなかったら水 1ドルにする、という設定
+    // このコンストラクターは2個目のコンストラクターを呼んでいる (thisがある)
     public Drink(){
         this("Water", 1.00);
     }
