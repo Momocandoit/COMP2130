@@ -4,7 +4,7 @@ void main() {
     // creating an array
     ArrayList<Car> Cars = new ArrayList<Car>();
     cars.add(new Car ("Carolla", 45.00));
-    cars.add(new LuxuryCar("MBW X5", 90.00));
+    cars.add(new LuxuryCar("MBW X5", 90.00, "insurance", 20.00));
     cars.add(new Car ("Civic", 40.00));
 
 
