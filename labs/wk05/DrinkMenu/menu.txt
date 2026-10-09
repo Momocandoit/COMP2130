@@ -1,0 +1,5 @@
+Tea 3.50
+Latte 5.25
+Mocha abc
+Mocha -2.00
+Espresso 3.00
