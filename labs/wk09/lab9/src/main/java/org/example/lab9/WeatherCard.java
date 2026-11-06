@@ -31,7 +31,7 @@ public class WeatherCard extends Application {
         sky.getChildren().addAll(background, sun);
 
         Text city = new Text("Toronto");
-        city.setFont(Font.font("Ariel", FontWeight.BOLD, 28));
+        city.setFont(Font.font("Arial", FontWeight.BOLD, 28));
         city.setFill(Color.rgb(25, 25,112));
         Image image = new Image(getClass().getResource("cloud.png").toExternalForm());
         ImageView cloud = new ImageView(image);
@@ -43,8 +43,9 @@ public class WeatherCard extends Application {
         BorderPane root = new BorderPane(sky);
         root.setTop(city);
         root.setLeft(cloud);
+        root.setBottom(days);
         stage.setTitle("Weather");
-        stage.setScene(new Scene(sky, 400, 300));
+        stage.setScene(new Scene(root, 400, 300));
         stage.show();
     }
 
