@@ -50,8 +50,7 @@ public class WeatherCard extends Application {
     @Override
     public void start(Stage stage){
         // ----- 画面上に部品を自由に配置できるレイアウト -----
-        Pane sky = new Pane();
-
+        BorderPane root = new BorderPane(sky)
         // ----- 背景の四角形を作る -----
         Rectangle background = new Rectangle();
         background.widthProperty().bind(sky.widthProperty());      // 背景の四角形の幅と高さをskyの幅と高さに連動させる
@@ -90,7 +89,7 @@ public class WeatherCard extends Application {
 
         // ----- ウィンドウを表示する -----
         stage.setTitle("Weather");
-        stage.setScene(new Scene(root, 400, 300));
+        stage.setScene(new Scene(root, 400, 300)); // 画面を作成  Scene(top-level_layout_container, width, height)
         stage.show();
     }
 
